@@ -1,0 +1,14 @@
+load("@rules_python//python:defs.bzl", "py_test")
+
+py_library(
+    name = "calc",
+    srcs = ["calc.py"],
+)
+
+py_test(
+    name = "calc_test",
+    srcs = ["calc_test.py"],
+    deps = [
+        "//projects/pythonpro:calc",
+    ],
+)
