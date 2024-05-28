@@ -1,0 +1,22 @@
+load("@aspect_rules_js//js:defs.bzl", "js_binary")
+load("@aspect_rules_ts//ts:defs.bzl", "ts_config", "ts_project")
+
+js_binary(
+    name = "ts_app",
+    data = [":my_code/calculator.js"],
+    entry_point = ":my_code/index.js",
+)
+
+ts_config(
+    name = "config",
+    src = "tsconfig.json",
+    deps = [],
+)
+
+ts_project(
+    name = "my_code",
+    srcs = glob(["*.ts"]),
+    out_dir = "my_code",
+    tsconfig = "config",
+    deps = [],
+)
