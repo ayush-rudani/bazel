@@ -6,7 +6,7 @@ load("@bazoku//:bazoku.bzl", "bazoku")
 go_library(
     name = "go_web_lib",
     srcs = ["main.go"],
-    importpath = "github.com/kriscfoster/multi-language-bazel-monorepo/projects/go_web",
+    importpath = "github.com/ayush-rudani/bazel/multi-language-bazel-monorepo/projects/go_web",
     visibility = ["//visibility:private"],
     deps = [
         "//projects/go_hello_world",
